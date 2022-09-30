@@ -1,0 +1,36 @@
+# Mac
+build/
+.DS_Store
+__MACOSX
+
+# Xcode
+xcuserdata
+DerivedData
+*.ipa
+*.xcuserstate
+
+# CocoaPods
+/Pods/Pods.xcodeproj/xcuserdata/
+
+# AT Suite
+/AT/node_modules/
+/AT/package-lock.json
+/AT/errorShots
+/AT/appium.log
+/teamcity/v1.txt
+/teamcity/v2.txt
+/AT/undefined
+/AT/derivedData
+/AT/wdio-results.json
+/AT/wdio-report.html
+/AT/output
+
+xxx*
+/Gemfile.lock
+
+# Fastlane
+fastlane/test_output/
+fastlane/report.xml
+
+# Swift Package Manager
+Package.resolved
