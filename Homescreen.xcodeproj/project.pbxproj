@@ -22,6 +22,12 @@
 		78B1D7B428E6D2850021965B /* BillingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B1D7B328E6D2850021965B /* BillingViewModel.swift */; };
 		78B1D7B628E6D28F0021965B /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B1D7B528E6D28F0021965B /* DashboardViewModel.swift */; };
 		78B1D7B828E6D2970021965B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B1D7B728E6D2970021965B /* LoginViewModel.swift */; };
+		78B1D7BB28E6E8720021965B /* RouterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B1D7BA28E6E8710021965B /* RouterType.swift */; };
+		78B1D7BD28E6E8970021965B /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B1D7BC28E6E8970021965B /* MainRouter.swift */; };
+		78B1D7BF28E6E8C90021965B /* FakeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B1D7BE28E6E8C90021965B /* FakeRouter.swift */; };
+		78B1D7C328E6F4BC0021965B /* MainFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B1D7C228E6F4BC0021965B /* MainFactory.swift */; };
+		78B1D7C728E6F58F0021965B /* PaymentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B1D7C528E6F58F0021965B /* PaymentViewModel.swift */; };
+		78B1D7C828E6F58F0021965B /* PaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B1D7C628E6F58F0021965B /* PaymentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +67,12 @@
 		78B1D7B328E6D2850021965B /* BillingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillingViewModel.swift; sourceTree = "<group>"; };
 		78B1D7B528E6D28F0021965B /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		78B1D7B728E6D2970021965B /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		78B1D7BA28E6E8710021965B /* RouterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterType.swift; sourceTree = "<group>"; };
+		78B1D7BC28E6E8970021965B /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
+		78B1D7BE28E6E8C90021965B /* FakeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeRouter.swift; sourceTree = "<group>"; };
+		78B1D7C228E6F4BC0021965B /* MainFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFactory.swift; sourceTree = "<group>"; };
+		78B1D7C528E6F58F0021965B /* PaymentViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentViewModel.swift; sourceTree = "<group>"; };
+		78B1D7C628E6F58F0021965B /* PaymentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,11 +123,13 @@
 		78B1D77928E6CE860021965B /* Homescreen */ = {
 			isa = PBXGroup;
 			children = (
+				78B1D7C428E6F5510021965B /* Payment */,
+				78B1D7C128E6F4AC0021965B /* Factory */,
+				78B1D7C028E6F49B0021965B /* Main */,
+				78B1D7B928E6E8610021965B /* Router */,
 				78B1D7B028E6D2130021965B /* Billing */,
 				78B1D7AB28E6CFC30021965B /* Dashboard */,
 				78B1D7AA28E6CFB40021965B /* Login */,
-				78B1D77A28E6CE860021965B /* AppDelegate.swift */,
-				78B1D77C28E6CE860021965B /* SceneDelegate.swift */,
 				78B1D77E28E6CE860021965B /* ViewController.swift */,
 				78B1D78028E6CE860021965B /* Main.storyboard */,
 				78B1D78328E6CE880021965B /* Assets.xcassets */,
@@ -167,6 +181,42 @@
 				78B1D7B328E6D2850021965B /* BillingViewModel.swift */,
 			);
 			path = Billing;
+			sourceTree = "<group>";
+		};
+		78B1D7B928E6E8610021965B /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				78B1D7BA28E6E8710021965B /* RouterType.swift */,
+				78B1D7BC28E6E8970021965B /* MainRouter.swift */,
+				78B1D7BE28E6E8C90021965B /* FakeRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		78B1D7C028E6F49B0021965B /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				78B1D77A28E6CE860021965B /* AppDelegate.swift */,
+				78B1D77C28E6CE860021965B /* SceneDelegate.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		78B1D7C128E6F4AC0021965B /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				78B1D7C228E6F4BC0021965B /* MainFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		78B1D7C428E6F5510021965B /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+				78B1D7C628E6F58F0021965B /* PaymentView.swift */,
+				78B1D7C528E6F58F0021965B /* PaymentViewModel.swift */,
+			);
+			path = Payment;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,13 +351,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				78B1D77F28E6CE860021965B /* ViewController.swift in Sources */,
+				78B1D7C328E6F4BC0021965B /* MainFactory.swift in Sources */,
 				78B1D7B428E6D2850021965B /* BillingViewModel.swift in Sources */,
 				78B1D77B28E6CE860021965B /* AppDelegate.swift in Sources */,
 				78B1D7AF28E6CFDC0021965B /* DashboardView.swift in Sources */,
+				78B1D7C728E6F58F0021965B /* PaymentViewModel.swift in Sources */,
 				78B1D7AD28E6CFD20021965B /* LoginView.swift in Sources */,
+				78B1D7BB28E6E8720021965B /* RouterType.swift in Sources */,
 				78B1D7B228E6D2210021965B /* BillingView.swift in Sources */,
+				78B1D7BF28E6E8C90021965B /* FakeRouter.swift in Sources */,
 				78B1D77D28E6CE860021965B /* SceneDelegate.swift in Sources */,
 				78B1D7B628E6D28F0021965B /* DashboardViewModel.swift in Sources */,
+				78B1D7BD28E6E8970021965B /* MainRouter.swift in Sources */,
+				78B1D7C828E6F58F0021965B /* PaymentView.swift in Sources */,
 				78B1D7B828E6D2970021965B /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

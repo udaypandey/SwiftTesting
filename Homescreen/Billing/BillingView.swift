@@ -12,13 +12,36 @@ struct BillingView: View {
 
     var body: some View {
         ZStack {
-            Color.blue
+            Color.pink
 
             VStack {
+                Spacer()
+                Spacer()
+
                 Text(model.title)
                     .font(.system(.largeTitle))
                     .foregroundColor(.white)
-                    .accessibilityLabel(Accessibility.title.rawValue)
+                    .accessibility(identifier: Accessibility.title.rawValue)
+
+                Spacer()
+
+                Button(action: {
+                    model.didTapOnGoToPayment()
+                }) {
+                    HStack {
+                        Text("Payment")
+
+                        Image(systemName: "arrow.forward.circle")
+                    }
+                    .padding()
+                    .foregroundColor(.white)
+                    .font(.title)
+                }
+                .background(Color.gray)
+                .clipShape(RoundedRectangle(cornerRadius: 10))
+                .accessibility(identifier: Accessibility.goToPayment.rawValue)
+
+                Spacer()
             }
         }
         .ignoresSafeArea()
@@ -28,12 +51,15 @@ struct BillingView: View {
 extension BillingView {
     private enum Accessibility: String {
         case title = "accessibility.id.title"
+        case goToPayment = "accessibility.id.goToPayment"
     }
 }
 
 
 struct BillingView_Previews: PreviewProvider {
     static var previews: some View {
-        BillingView(model: BillingViewModel(title: "Billing"))
+        BillingView(model: BillingViewModel(
+            title: "Billing",
+            router: FakeRouter()))
     }
 }

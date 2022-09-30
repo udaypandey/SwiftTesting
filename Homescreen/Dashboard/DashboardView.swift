@@ -15,10 +15,33 @@ struct DashboardView: View {
             Color.green
 
             VStack {
+                Spacer()
+                Spacer()
+
                 Text(model.title)
                     .font(.system(.largeTitle))
                     .foregroundColor(.white)
-                    .accessibilityLabel(Accessibility.title.rawValue)
+                    .accessibility(identifier: Accessibility.title.rawValue)
+
+                Spacer()
+
+                Button(action: {
+                    model.didTapOnGoToBilling()
+                }) {
+                    HStack {
+                        Text("Billing")
+
+                        Image(systemName: "arrow.forward.circle")
+                    }
+                    .padding()
+                    .foregroundColor(.white)
+                    .font(.title)
+                }
+                .background(Color.pink)
+                .clipShape(RoundedRectangle(cornerRadius: 10))
+                .accessibility(identifier: Accessibility.goToBilling.rawValue)
+
+                Spacer()
             }
         }
         .ignoresSafeArea()
@@ -28,13 +51,13 @@ struct DashboardView: View {
 extension DashboardView {
     private enum Accessibility: String {
         case title = "accessibility.id.title"
-        case login = "accessibility.id.goToBilling"
+        case goToBilling = "accessibility.id.goToBilling"
     }
 }
 
 
 struct DashboardView_Previews: PreviewProvider {
     static var previews: some View {
-        DashboardView(model: DashboardViewModel(title: "Dashboard"))
+        DashboardView(model: DashboardViewModel(title: "Dashboard", router: FakeRouter()))
     }
 }

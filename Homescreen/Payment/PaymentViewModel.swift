@@ -1,5 +1,5 @@
 //
-//  DashboardViewModel.swift
+//  PaymentViewModel.swift
 //  Homescreen
 //
 //  Created by Uday Pandey on 27/09/2022.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-final public class DashboardViewModel: ObservableObject {
+final public class PaymentViewModel: ObservableObject {
     @Published private(set) var title: String
 
     private let router: RouterType
@@ -16,9 +16,4 @@ final public class DashboardViewModel: ObservableObject {
         self.title = title
         self.router = router
     }
-
-    func didTapOnGoToBilling() {
-        router.goToBilling()
-    }
-
 }

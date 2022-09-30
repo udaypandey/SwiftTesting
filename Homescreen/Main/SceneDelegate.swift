@@ -19,9 +19,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
+        print(ProcessInfo.processInfo.arguments)
+
         let window = UIWindow(windowScene: windowScene)
-        let loginViewModel = LoginViewModel(title: "Login")
-        window.rootViewController = UIHostingController(rootView: LoginView(model: loginViewModel))
+        window.rootViewController = MainFactory.topViewController()
         self.window = window
         window.makeKeyAndVisible()
 
@@ -54,7 +55,4 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
-
-
 }
-
